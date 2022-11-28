@@ -10,7 +10,6 @@ It's 2022-2 Project of Machine Learning lecture from Department of Computing, Ga
 
 <br>
 
-```
 In the case of movies and music, there're representative recommendation systems :
 
 - Movies for Netflix
@@ -19,19 +18,13 @@ In the case of movies and music, there're representative recommendation systems 
 However, there is no representative recommendation system for games!
 
 Therefore, we are going to make a system to recommend games.
-```
+
 
 <br><br>
 
 ## <b> Dataset Introduction </b>
 
-<br>
-
 This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clean dataset)'.
-
-<br>
-
-- Steam Store Games (Clean dataset) : https://www.kaggle.com/datasets/nikdavis/steam-store-game
 
 <br>
 
@@ -109,7 +102,28 @@ This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clea
 
 - <b>Distributions of columns</b> 
 
-<img src="https://user-images.githubusercontent.com/31691750/204211779-34f749ca-214e-4179-a276-b199ef700fce.png"  width="498" height="237"/>
+<img src="https://user-images.githubusercontent.com/31691750/204224380-b9cc4698-7609-407f-8759-191fa3af9a87.png"  width="307.2" height="240"/> 
+<img src="https://user-images.githubusercontent.com/31691750/204224835-91b07edc-e884-45e4-aa15-b1fe4cfde52e.png"  width="307.2" height="240"/>
+
+<br>
+<img src="https://user-images.githubusercontent.com/31691750/204224827-d2a748ea-a484-48d2-914a-5f2809edde50.png"  width="307.2" height="240"/> 
+<img src="https://user-images.githubusercontent.com/31691750/204224831-9a2e83b8-e8b6-46d0-b3a2-268f4a73e18b.png"  width="307.2" height="240"/>
+
+<br><br>
+
+<b> Dataset 'Steam Video Games' </b>
+
+</br>
+
+- informations of　<b>value</b>
+
+<img src="https://user-images.githubusercontent.com/31691750/204211816-e65f6664-0c6c-4812-896f-1e6e941954be.png"  width="208" height="144.5"/>
+
+</br>
+
+- Top 10 Users of <b>value</b> (Play-time) + <b> What They Played </b> 
+
+<img src="https://user-images.githubusercontent.com/31691750/204211822-d2683dcd-66d8-464e-854d-9002a9a43152.png"  width="307" height="193.5"/>
 
 <br><br>
 
@@ -122,6 +136,56 @@ This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clea
 <br>
 
 <b> If the group is .... </b> 
-- LARGE : Use Collaborative Filtering
-- SMALL : Use Cotent-Based Filtering
+- Large : Use Collaborative Filtering
+- Small : Use Cotent-Based Filtering
   - For avoiding [long-tail problem](https://rogerheederer.github.io/LongTailProblem/).
+
+<br>
+
+<b> Clustering </b>
+
+(내용 추가 예정)
+
+<br>
+
+<b> Collaborative Filtering </b>
+
+<br> 
+
+<img src = "https://user-images.githubusercontent.com/84762786/204191946-4ba25939-46a7-4600-b44b-ef94986bb432.png"/>
+<br> 
+
+There is no rating column in our data.
+
+So, we calculated the user's rating by comparing the user's play hour with average played hour.
+
+<br>
+
+<img src = "https://user-images.githubusercontent.com/84762786/204191995-96ecf851-b5e9-4fe6-94b2-1b7097e699ca.png"/>
+
+<br> 
+
+We calculated user's rating.
+
+<br>
+
+<img src = "https://user-images.githubusercontent.com/84762786/204191549-bae01bbf-9bcf-4d21-8a50-5eaf225af9d9.png"/>
+
+<br> 
+
+We made <b> CF_recommend_Game function</b>. <br>
+It gets the user id input and calculates the estimated score for each game name using svd.
+
+<br>
+
+<img src = "https://user-images.githubusercontent.com/84762786/204192022-228366cf-9bd0-4574-b0c5-e30bede288d2.png"/>
+
+<br> 
+
+This is the <b>result</b> of the CF function.
+
+<br><br>
+
+<b> Content-Based Filtering </b>
+
+(내용 추가 예정)
