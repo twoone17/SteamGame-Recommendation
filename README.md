@@ -6,7 +6,7 @@ It's 2022-2 Project of Machine Learning lecture from Department of Computing, Ga
 
 <br><br>
 
-## <b> About </b>
+## <b> Business Objective </b>
 
 <br>
 
@@ -15,6 +15,8 @@ In the case of movies and music, there're representative recommendation systems 
 - Movies for Netflix
 - Musics for Spotify
 
+<br>
+
 However, there is no representative recommendation system for games!
 
 Therefore, we are going to make a system to recommend games.
@@ -22,7 +24,7 @@ Therefore, we are going to make a system to recommend games.
 
 <br><br>
 
-## <b> Dataset Introduction </b>
+## <b> Dataset Description </b>
 
 This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clean dataset)'.
 
@@ -112,9 +114,6 @@ This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clea
 <br><br>
 
 <b> Dataset 'Steam Video Games' </b>
-
-</br>
-
 - informations of　<b>value</b>
 
 <img src="https://user-images.githubusercontent.com/31691750/204211816-e65f6664-0c6c-4812-896f-1e6e941954be.png"  width="208" height="144.5"/>
@@ -144,48 +143,80 @@ This dataset is combination of 'Steam Video Games', and 'Steam Store Games (Clea
 
 <b> Clustering </b>
 
-(내용 추가 예정)
-
 <br>
+
+<img src = "https://user-images.githubusercontent.com/31691750/204240721-bdb94573-6488-4a36-8aa8-cf4bebebd862.jpg"  width="503.25" height="176.25" />
+
+To solve the long tail problem, We divided and filtered the columns.
+
+<br><br>
+
+<img src = "https://user-images.githubusercontent.com/31691750/204243776-6f145383-059f-4047-81c3-3f4351ae11ae.png"/>
+
+This is the <b>result</b> of the clustering.
+
+<br><br><br>
 
 <b> Collaborative Filtering </b>
 
 <br> 
 
 <img src = "https://user-images.githubusercontent.com/84762786/204191946-4ba25939-46a7-4600-b44b-ef94986bb432.png"/>
-<br> 
 
 There is no rating column in our data.
 
 So, we calculated the user's rating by comparing the user's play hour with average played hour.
 
-<br>
+<br><br>
 
 <img src = "https://user-images.githubusercontent.com/84762786/204191995-96ecf851-b5e9-4fe6-94b2-1b7097e699ca.png"/>
 
-<br> 
-
 We calculated user's rating.
 
-<br>
+<br><br>
 
 <img src = "https://user-images.githubusercontent.com/84762786/204191549-bae01bbf-9bcf-4d21-8a50-5eaf225af9d9.png"/>
-
-<br> 
 
 We made <b> CF_recommend_Game function</b>. <br>
 It gets the user id input and calculates the estimated score for each game name using svd.
 
-<br>
+<br><br>
 
 <img src = "https://user-images.githubusercontent.com/84762786/204192022-228366cf-9bd0-4574-b0c5-e30bede288d2.png"/>
 
-<br> 
-
 This is the <b>result</b> of the CF function.
 
-<br><br>
+<br><br><br>
 
 <b> Content-Based Filtering </b>
 
-(내용 추가 예정)
+<br>
+
+```
+df = pd.read_csv('steam.csv')
+df['rating'] = ((df['positive_ratings'] 
+               - df['negative_ratings'])
+               /(2 * (df['positive_ratings'] 
+                    + df['negative_ratings'])) + 0.5) * 10.0
+```
+
+To sort the recommendation result, We compute rating.
+
+<br><br>
+
+<img src = "https://user-images.githubusercontent.com/31691750/204246239-d12647f1-6179-41a7-a1df-746bd582cc2d.png" />
+
+Column <b>categories</b> has lots of data. <br>
+Because They takes lots of time to handle, we use only firse 5 data.
+
+<br><br>
+
+<img src = "https://user-images.githubusercontent.com/31691750/204247027-e5f5ec32-35f8-46df-97d7-6f159f7cb9d3.png"/>
+
+This is the <b>result</b> of the Content-Based filtering.
+
+<br><br><br>
+
+## To Use
+
+(추가 )
