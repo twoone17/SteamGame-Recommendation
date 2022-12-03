@@ -2,7 +2,6 @@
 
 SteamGame Recommendation is to recommend playable able based on your information.
 <br><br>
-It's 2022-2 Project of Machine Learning lecture from Department of Computing, Gachon University.
 
 <br><br>
 
