@@ -215,13 +215,4 @@ Because They takes lots of time to handle, we use only firse 5 data.
 
 This is the <b>result</b> of the Content-Based filtering.
 
-<br><br><br>
-
-## To Use
-
-| Name           	| School ID 	| Github 	| Task                          	| Participation |
-|----------------	|-----------	|--------	|-------------------------------	|-----|
-| Kim Yong-Gyom  	| 201735819 	| a      	| Clustering (Main)             	| 25% |
-| Hong Eui-Sung  	| 201835549 	| [twoone17](https://github.com/twoone17)      	| Collaborative Filtering       	| 25% |
-| Kim Dong-hyeon 	| 201935217 	| [eastlighting1](https://github.com/eastlighting1)      	| Clustering (Sub) <br> Refactoring 	| 25% |
-| Lee Ji-Yeon    	| 202035372 	| [ZN-Sellena2000](https://github.com/ZN-Sellena2000)      	| Content-Based Filtering       	| 25% |
+<br>
